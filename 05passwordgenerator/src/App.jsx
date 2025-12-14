@@ -83,11 +83,11 @@ const copyPasswordToClipboard=useCallback(() => {
            <input
             type="checkbox"
             defaultChecked={charAllowed}
-            id="numberInput"
+            id="numberInput1"
             onChange={() =>{setcharAllowed((prev) => !prev);
             }}
             />
-            <label htmlFor='numberInput'>Characters</label>
+            <label htmlFor='numberInput1'>Characters</label>
           </div>
         </div>
       </div>
