@@ -77,7 +77,7 @@ export class Service{
         })
         } catch (error) {
             console.log("Appwrite service :: getPost :: error",error);
-            
+            return false;
         }
     }
     async getPosts(queries=[Query.equal("status","active")]){
@@ -100,7 +100,7 @@ export class Service{
             return await this.bucket.createFile({
                 bucketId:conf.appwriteBucketId,
                 fileId:ID.unique(),
-                file:file
+                file
         })
         } catch (error) {
             console.log("Appwrite service :: uploadFile :: error",error);
@@ -123,11 +123,11 @@ export class Service{
 
     getFilePreview(fileId){
         return this.bucket.getFilePreview({
-            bucketId:conf.appwriteBucketId,
-            fileId:fileId
-    })
+            bucketId:'conf.appwriteBucketId',
+            fileId:'fileId'
+    }).toString();
     }
 }
 
-const service =new Service()
-export default service
+const appwriteService =new Service()
+export default appwriteService

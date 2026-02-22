@@ -31,6 +31,10 @@ export default function Post() {
             }
         });
     };
+    //console.log(post.featuredImage);
+    //console.log(post)
+    //console.log(slug)
+
 
     return post ? (
         <div className="py-8">
@@ -40,7 +44,9 @@ export default function Post() {
                         src={appwriteService.getFilePreview(post.featuredImage)}
                         alt={post.title}
                         className="rounded-xl"
+                        
                     />
+
 
                     {isAuthor && (
                         <div className="absolute right-6 top-6">
